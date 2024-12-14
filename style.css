@@ -1,0 +1,42 @@
+ 
+.box{
+  
+  padding: 20px;
+  background-color: white;   /* Optional: background for content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.box2{
+  padding: 20px;
+  background-color: white;   /* Optional: background for content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#heading{
+    justify-content:center;
+    text-align:center;
+    color:red;
+}
+
+#image{
+    height:70px;
+    width:70px;
+}
+
+#link{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    
+}
+
+body {
+    display: flex;             /* Enable Flexbox */
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    height: 100vh;             /* Full viewport height */
+    margin: 0;                 /* Remove default margin */
+    background-color: #f4f4f4; /* Optional background color */
+  }

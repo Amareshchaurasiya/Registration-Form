@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"> </script>
+</head>
+<body>
+    <div class="container">
+    <h2 id="heading"><u>Applicant Registration Form</u></h2>
+    <form>
+        <!-- Personal Details Section -->
+        <p>Personal Details</p>
+        <div class="box">
+            <label for="name">Name</label> 
+            <input type="text" id="name" name="name" placeholder="Enter Name"> 
+            <label for="father_name">Father's Name</label>
+            <input type="text" id="father_name" name="Father's Name" placeholder="Enter Father Name">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+            <br><br>
+            <label for="religion">Religion</label>
+        <select id="religion" name="religion" required>
+            <option value="" disabled selected>Select your religion</option>
+            <option value="Hinduism">Hinduism</option>
+            <option value="Islam">Islam</option>
+            <option value="Christianity">Christianity</option>
+            <option value=" Buddhism"> Buddhism</option>
+            <option value="Sikhism">Sikhism</option>
+            <option value="Jainism" >Jainism</option>
+        </select>
+        <label for="casteCategory">Caste Category</label>
+        <select id="casteCategory" name="casteCategory" required>
+            <option value="" disabled selected>Select your caste category</option>
+            <option value="general">General</option>
+            <option value="obc">OBC</option>
+            <option value="sc">SC </option>
+            <option value="st">ST </option>
+            <option value="ews">EWS</option>
+        </select>
+        <label>Gender</label>
+        <label for="male">Male</label>
+        <input type="radio" Name="Male"  >
+        <label for="female">Female</label>
+        <input type="radio" Name="Female"  >
+
+        </div>
+
+        <!-- Address Section -->
+        <p>Address</p>
+        <div class="box">
+            <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="usa">United States</option>
+            <option value="india">India</option>
+            <option value="uk">United Kingdom</option>
+            <option value="canada">Canada</option>
+            <option value="australia">Australia</option>
+          </select>
+</select>
+<label for="state">State</label>
+<select id="state" name="state" onchange="updateDistricts()" required>
+  <option value="" disabled selected>Select your state</option>
+  <option value="bihar">Bihar</option>
+  <option value="uttar-pradesh">Uttar Pradesh</option>
+  <option value="andhra-pradesh">Andhra Pradesh</option>
+  <option value="arunachal-pradesh">Arunachal Pradesh</option>
+  <option value="assam">Assam</option>
+  <option value="chhattisgarh">Chhattisgarh</option>
+  <option value="goa">Goa</option>
+  <option value="gujarat">Gujarat</option>
+  <option value="haryana">Haryana</option>
+  <option value="himachal-pradesh">Himachal Pradesh</option>
+  <option value="jharkhand">Jharkhand</option>
+  <option value="karnataka">Karnataka</option>
+  <option value="kerala">Kerala</option>
+  <option value="madhya-pradesh">Madhya Pradesh</option>
+  <option value="maharashtra">Maharashtra</option>
+  <option value="manipur">Manipur</option>
+  <option value="meghalaya">Meghalaya</option>
+  <option value="mizoram">Mizoram</option>
+  <option value="nagaland">Nagaland</option>
+  <option value="odisha">Odisha</option>
+  <option value="punjab">Punjab</option>
+  <option value="rajasthan">Rajasthan</option>
+  <option value="sikkim">Sikkim</option>
+  <option value="tamil-nadu">Tamil Nadu</option>
+  <option value="telangana">Telangana</option>
+  <option value="tripura">Tripura</option>
+  <option value="uttarakhand">Uttarakhand</option>
+  <option value="west-bengal">West Bengal</option>
+  <option value="andaman-nicobar">Andaman and Nicobar Islands</option>
+  <option value="chandigarh">Chandigarh</option>
+  <option value="dadra-nagar-haveli">Dadra and Nagar Haveli</option>
+  <option value="daman-diu">Daman and Diu</option>
+  <option value="lakshadweep">Lakshadweep</option>
+  <option value="delhi">Delhi</option>
+  <option value="puducherry">Puducherry</option>
+</select>
+
+<label for="district">District</label>
+<select id="district" name="district" required>
+  <option value="" disabled selected>Select your district</option>
+</select>
+<br><br>
+<label for="pincode">Pincode</label>
+<input type="Number" Name="Pincode" id="Pincode" placeholder="Enter Pincode">
+<label for="address">Address</label>
+<input type="text" name="Address" id="address" placeholder="Enter Address">
+ </div>
+
+ <!-- Education Section -->
+ <p>Education</p>
+ <div class="box2">
+           <input type="checkbox" name="high school" >
+           <label for="high school"> High School</label>
+           <input type="checkbox" name="Inter Mediate">
+           <label for="inter mediate"> Inter Mediate</label>
+           <input type="checkbox" name="Graduation" >
+           <label for="Graduation"> Graduation</label>
+           <input type="checkbox" name="Post Graduation" required>
+           <label for="Post Graduation"> Post Graduation</label>
+ </div>
+
+<!-- Hobbies Section -->
+    <p>Hobbies</p>
+    <div class="box">
+    <input type="text" id="hobbiesInput" placeholder="Enter Your Hobbies" />
+    <button onclick="addHobbies()">Add</button>
+
+    <ul id="hobbiesList"></ul>
+  
+    <br>
+  
+</div>
+    <!-- image upload Section -->
+    <div class="form-container">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+          <label for="photo">Upload Your Photo:</label>
+          
+          <input type="file" id="photo" name="photo" accept="image/*" >
+         
+    
+          <button type="submit">Submit</button>
+         
+        </form>
+        
+      </div>
+      <img src="image.png" id="image" alt="Description of the image" width="200" height="150">
+    
+      <div id="link">
+      <a href="https://amarchaurasiya.netlify.app/" >View Report</a>
+    </div>
+    </form>
+</div>
+</body>
+</html>
